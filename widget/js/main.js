@@ -1,7 +1,7 @@
 var eventid = 7;
 var since_time = 0;
 var delay = 5000; /* milliseconds */
-var calling = false; /* make sure only one getJSON runs at a time */
+var calling = false; /* to make sure only one getJSON runs at a time */
 var container = null;
 var api_url = 'http://dev.gignal.com/event/api/eventId/';
 
@@ -64,7 +64,7 @@ function fetch (eventid) {
 /* OnLoad */
 $(function(){
 	container = $('#nodes');
-	// get data now
+	// get data
 	fetch(eventid);
 	// get data every {delay} millisecond
 	window.setInterval(fetch, delay, eventid);
